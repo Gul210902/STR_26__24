@@ -32,18 +32,19 @@ which design option must be analysed.
 **Report reference**: Team 08 Client Report, pages 10, 24 and 40
 
 **Possible solution**:
-*Design solution*
+
+- *Design solution*
 The project team should agree on one vertical-extension scenario and use
 the same number of storeys in the architectural, structural and materials
 reports. The structural engineer should then verify the beams, columns
 and foundations using the loads from this agreed design.
 
-*Modelling solution*
+- *Modelling solution*
 The coordinated BIM model should contain the agreed number of
 IfcBuildingStorey entities with consistent names, elevations and floor
 geometry across all discipline models.
 
-*Tool solution*
+- *Tool solution*
 An IfcOpenShell script can count the IfcBuildingStorey entities and
 compare their names and elevations between discipline models. The script
 should report missing, duplicated or inconsistent storeys.
