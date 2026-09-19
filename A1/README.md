@@ -5,10 +5,12 @@
 - Gulshan Kumar  (s252589)
 - Aida Amirbabaei (s216201)
 
-# Assignment A1 - Forensic BIM
-
 - **Group number**: 24
 - **Focus area**: Structure
+
+# Assignment A1 - Forensic BIM
+
+
 - **Identified Issuees**:
 - Issue 1. "Inconsistent number of additional storeys"
 - Related disciplines: Architecture and Materials/LCA
