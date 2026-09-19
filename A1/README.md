@@ -31,7 +31,8 @@ which design option must be analysed.
   
 **Report reference**: Team 08 Client Report, pages 10, 24 and 40
 
-**Possible solution**:
+**Possible solution**
+
 *Design solution:*
 The project team should agree on one vertical-extension scenario and use
 the same number of storeys in the architectural, structural and materials
