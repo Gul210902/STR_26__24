@@ -6,6 +6,7 @@
 - Aida Amirbabaei (s216201)
 
 **Group number**: 24
+
 **Focus area**: Structure
 
 # Assignment A1 - Forensic BIM
