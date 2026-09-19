@@ -11,7 +11,7 @@
 
 # Assignment A1 - Forensic BIM
 **Identified Issues**:
-- Issue 1. "Inconsistent number of additional storeys"
+Issue 1. "Inconsistent number of additional storeys"
 - Related disciplines: Architecture and Materials/LCA
 - Issue type: Design issue
 - Affected systems: Floor and Structure
