@@ -11,7 +11,31 @@
 
 # Assignment A1 - Forensic BIM
 **Identified Issues**:
-1. "Inconsistent number of additional storeys"
+1. "Inconsistent existing storey count"
+- Related disciplines: Architecture 
+- Issue type: Design issue
+- Affected systems: Floor, Space and Structure
+- IFC class: IfcBuildingStorey
+
+**Issue Description**:
+The architectural and structural sections provide inconsistent descriptions of the existing building storeys. The architectural section states that Building 308 comprises three storeys: a ground floor, first floor and second floor. However, the structural section states that the building consists of a basement and only one floor above ground.
+
+It is unclear whether the disciplines are using different names for the same levels or whether one level has been excluded from the structural assessment. This creates uncertainty about the structural levels, elements and loads included in the analysis.
+  
+**Report reference**: Team 08 Client Report, page 6, Section 1.1, and page 17, Section 2.
+
+**Possible solution**
+
+*Design solution:*
+The architecture and structure teams should establish a common definition for every existing level based on its elevation and function. The agreed storey names and number of storeys should then be used consistently in all reports, drawings and structural calculations.
+
+*Modelling solution:*
+Each physical building level should be represented by the correct IfcBuildingStorey entity. Storey names, elevations and spatial containment should be checked to ensure that structural elements are assigned to the correct level.
+
+*Tool solution:*
+An IfcOpenShell script can extract all IfcBuildingStorey entities and display their names and elevations. The results can then be compared with the architectural and structural claims to determine the actual number and designation of storeys in the IFC model.
+
+2. "Inconsistent number of additional storeys"
 - Related disciplines: Architecture and Materials/LCA 
 - Issue type: Design issue
 - Affected systems: Floor and Structure
