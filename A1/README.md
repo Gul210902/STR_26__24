@@ -2,8 +2,8 @@
 
 **Group members**
 
-Gulshan Kumar  (s252589)
-Aida Amirbabaei (s216201)
+- Gulshan Kumar  (s252589)
+- Aida Amirbabaei (s216201)
 
 # Assignment A1 - Forensic BIM
 
