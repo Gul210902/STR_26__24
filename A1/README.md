@@ -11,23 +11,39 @@
 
 # Assignment A1 - Forensic BIM
 **Identified Issues**:
-
 Issue 1. "Inconsistent number of additional storeys"
 - Related disciplines: Architecture and Materials/LCA 
 - Issue type: Design issue
 - Affected systems: Floor and Structure
 - IFC class: IfcBuildingStorey
+
+**Issue Description**:
+The number of proposed additional storeys is not coordinated between
+the disciplines. The architectural section states that one-and-a-half
+storeys will be added, while the materials section assumes the addition
+of two complete floors.
+
+This creates an uncertain structural design basis because the number of
+storeys determines the permanent loads, imposed loads and forces applied
+to the existing columns and foundations. Page 24 provides a general
+structural limit of two to three additional floors but does not establish
+which design option must be analysed.
   
 **Report reference**: Team 08 Client Report, pages 10, 24 and 40
 
-## Description of script
-The script opens the IFC structural model (`25-06-D-STR.ifc`) and counts the number of `IfcBuildingStorey` elements. It checks the numbers of storeys in IFC model in order to verify the claim of the report. The script also checks the storey name and compare it to the elevation in order to check the validity of the storey name.
+**Possible solution**:
+### Design solution
+The project team should agree on one vertical-extension scenario and use
+the same number of storeys in the architectural, structural and materials
+reports. The structural engineer should then verify the beams, columns
+and foundations using the loads from this agreed design.
 
-### Analyst notes
-- The script searches for all `IfcBuildingStorey` entities in the IFC model.  
-- It prints the number of storeys and lists the name and the elevation of all the storeys.
-- It asserts the claim of the report about the type and number of storeys  
+### Modelling solution
+The coordinated BIM model should contain the agreed number of
+IfcBuildingStorey entities with consistent names, elevations and floor
+geometry across all discipline models.
 
-### Manager notes
-- Script used: [`check_storey.py`](./check_storey.py)  
-- This script validates the reported number of storeys in the structural model and the type of each storey.
+### Tool solution
+An IfcOpenShell script can count the IfcBuildingStorey entities and
+compare their names and elevations between discipline models. The script
+should report missing, duplicated or inconsistent storeys.
