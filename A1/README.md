@@ -13,11 +13,11 @@
 **Identified Issues**:
 
 Issue 1. "Inconsistent number of additional storeys"
-- Related disciplines: Architecture and Materials/LCA
-- Issue type: Design issue
-- Affected systems: Floor and Structure
-- IFC class: IfcBuildingStorey
-- Evidence: Team 08 Client Report, pages 10, 24 and 40
+  Related disciplines: Architecture and Materials/LCA
+  Issue type: Design issue
+  Affected systems: Floor and Structure
+  IFC class: IfcBuildingStorey
+  Evidence: Team 08 Client Report, pages 10, 24 and 40
   
 - **Report reference**: Structural Report, p. 1, section 1.1.1
 
