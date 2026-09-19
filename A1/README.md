@@ -10,9 +10,7 @@
 **Focus area**: Structure
 
 # Assignment A1 - Forensic BIM
-
-
-- **Identified Issuees**:
+**Identified Issues**:
 - Issue 1. "Inconsistent number of additional storeys"
 - Related disciplines: Architecture and Materials/LCA
 - Issue type: Design issue
