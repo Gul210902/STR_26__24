@@ -17,9 +17,8 @@ Issue 1. "Inconsistent number of additional storeys"
 - Issue type: Design issue
 - Affected systems: Floor and Structure
 - IFC class: IfcBuildingStorey
-- Evidence: Team 08 Client Report, pages 10, 24 and 40
   
-- **Report reference**: Structural Report, p. 1, section 1.1.1
+**Report reference**: Team 08 Client Report, pages 10, 24 and 40
 
 ## Description of script
 The script opens the IFC structural model (`25-06-D-STR.ifc`) and counts the number of `IfcBuildingStorey` elements. It checks the numbers of storeys in IFC model in order to verify the claim of the report. The script also checks the storey name and compare it to the elevation in order to check the validity of the storey name.
