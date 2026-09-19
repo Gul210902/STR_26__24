@@ -1,16 +1,22 @@
-# OPENBIM_group24
+# 41934 AdvanceBIM
 
 **Group members**
 
-Diego Bruttin  (s251895)
-Jonas Alakuzay (s170494)
+Gulshan Kumar  (s252589)
+Aida Amirbabaei (s216201)
 
-# Assignment 1 - OpenBIM Rule Checker
+# Assignment A1 - Forensic BIM
 
 - **Group number**: 24
 - **Focus area**: Structure
-- **Claim being checked**: "DTU building 115 is a four-story structure that includes a basement
-and has a flat roof upon which is a terrace"
+- **Identified Issuees**:
+- Issue 1. "Inconsistent number of additional storeys"
+- Related disciplines: Architecture and Materials/LCA
+- Issue type: Design issue
+- Affected systems: Floor and Structure
+- IFC class: IfcBuildingStorey
+- Evidence: Team 08 Client Report, pages 10, 24 and 40
+  
 - **Report reference**: Structural Report, p. 1, section 1.1.1
 
 ## Description of script
