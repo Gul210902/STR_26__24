@@ -92,40 +92,110 @@ An IfcOpenShell validation script should group storeys by elevation and flag
 duplicated levels, temporary names and differences between the report and
 IFC model.
 
-2. "Inconsistent number of additional storeys"
-- Related disciplines: Architecture and Materials/LCA 
-- Issue type: Design issue
-- Affected systems: Floor and Structure
-- IFC class: IfcBuildingStorey
+---------------------------------------------------------------------------------
+## Issue 2 — Incorrect column dimension summary
 
-**Issue Description**:
-The number of proposed additional storeys is not coordinated between
-the disciplines. The architectural section states that one-and-a-half
-storeys will be added, while the materials section assumes the addition
-of two complete floors.
+* **Discipline:** Structure
+* **Related discipline:** None
+* **Issue type:** Design documentation and modelling issue
+* **Affected system:** Structure
+* **IFC class:** `IfcColumn`
+* **Model checked:** `B308X.ifc`
+* **IFC schema:** IFC4X3
 
-This creates an uncertain structural design basis because the number of
-storeys determines the permanent loads, imposed loads and forces applied
-to the existing columns and foundations. Page 24 provides a general
-structural limit of two to three additional floors but does not establish
-which design option must be analysed.
-  
-**Report reference**: Team 08 Client Report, pages 10, 24 and 40
+### Issue description
 
-**Possible solution**
+The structural report provides inconsistent information about the largest
+column cross-section. Table 3 lists column S114 with a cross-section of
+520 × 200 mm. However, the written summary immediately below the table
+states that the largest column cross-section is 450 × 200 mm.
 
-*Design solution:*
-The project team should agree on one vertical-extension scenario and use
-the same number of storeys in the architectural, structural and materials
-reports. The structural engineer should then verify the beams, columns
-and foundations using the loads from this agreed design.
+Because 520 × 200 mm is larger than 450 × 200 mm, the written summary does
+not correspond with the information presented in Table 3. This could lead
+to incorrect structural assessment, modelling or quantity calculations.
 
-*Modelling solution:*
-The coordinated BIM model should contain the agreed number of
-IfcBuildingStorey entities with consistent names, elevations and floor
-geometry across all discipline models.
+### Report reference
 
-*Tool solution:*
-An IfcOpenShell script can count the IfcBuildingStorey entities and
-compare their names and elevations between discipline models. The script
-should report missing, duplicated or inconsistent storeys.
+* Team 08 Client Report, page 22, Table 3
+* Team 08 Client Report, page 22, paragraph immediately below Table 3
+
+### Fact-check method
+
+The claim was checked in `B308X.ifc` using Python and IfcOpenShell. The
+script extracted all `IfcColumn` objects, searched their names, tags and
+type information for S114, extracted their cross-section dimensions and
+identified the largest detected rectangular column section.
+
+### Script results
+
+* **Total `IfcColumn` objects:** 211
+* **Columns matching S114:** 0
+* **Detected occurrences of 520 × 200 mm:** 0
+* **Largest detected rectangular section:** 1090 × 200 mm
+* **Occurrences of 1090 × 200 mm:** 8
+* **Columns without extractable dimensions:** 0
+
+| Source          | Column/description       | Cross-section |
+| --------------- | ------------------------ | ------------: |
+| Written summary | Reported largest column  |  450 × 200 mm |
+| Table 3         | Column S114              |  520 × 200 mm |
+| B308X IFC model | Column S114              |     Not found |
+| B308X IFC model | Largest detected section | 1090 × 200 mm |
+
+The IFC model also contains several sections larger than the value stated
+in the written summary.
+
+| Detected cross-section | Occurrences |
+| ---------------------: | ----------: |
+|          1090 × 200 mm |           8 |
+|           760 × 200 mm |           1 |
+|           640 × 200 mm |           3 |
+|           580 × 200 mm |           3 |
+|           400 × 390 mm |           2 |
+|           360 × 330 mm |           2 |
+
+### Fact-check conclusion
+
+The report inconsistency is confirmed because Table 3 gives column S114 a
+cross-section of 520 × 200 mm, while the paragraph below the table states
+that the largest column cross-section is 450 × 200 mm.
+
+The IFC model does not contain an `IfcColumn` with S114 in its name, tag,
+object type or assigned type information. Therefore, the 520 × 200 mm
+section listed for S114 cannot be traced to a specific IFC object.
+
+The script also did not detect a 520 × 200 mm column section. Instead, it
+detected several sections larger than 450 × 200 mm, with the largest
+detected section being 1090 × 200 mm. Therefore, neither report value is
+fully supported by the IFC model.
+
+This indicates a documentation inconsistency and a modelling-information
+issue. The missing S114 identifier prevents reliable traceability between
+the report and the IFC model.
+
+### Possible solutions
+
+#### Design solution
+
+The structural engineer should verify the dimensions of column S114 and
+confirm the actual largest column cross-section. Table 3 and the written
+summary should then be corrected so that they contain consistent values.
+
+#### Modelling solution
+
+Every structural column should have a consistent identifier in its IFC
+`Name`, `Tag` or type information. Column S114 should be identifiable in
+the model, and its profile dimensions should correspond with the verified
+structural schedule.
+
+The unusually large detected sections should also be visually inspected to
+confirm whether they represent actual column profiles, compound elements or
+bounding-box dimensions.
+
+#### Tool solution
+
+An IfcOpenShell validation script should compare column identifiers and
+dimensions between structural reports and IFC models. It should flag missing
+column identifiers, scheduled dimensions that do not occur in the model and
+modelled sections that exceed the reported maximum.
+
