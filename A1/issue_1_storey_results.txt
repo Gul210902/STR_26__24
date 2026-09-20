@@ -1,0 +1,92 @@
+FACT CHECK: EXISTING STOREY COUNT
+=======================================================
+Model checked: B308X.ifc
+IFC schema: IFC4X3
+Total IfcBuildingStorey objects: 6
+
+STOREY 1
+Name: ES_Stue
+Long name: ES_Stue
+Elevation: 41.000 m
+GlobalId: 3uex$bhEf7efxiSAVHKSHy
+Structural elements assigned to this storey:
+  IfcColumn: 94
+  IfcBeam: 1
+  IfcSlab: 1
+  IfcWall: 94
+  IfcFooting: 0
+
+STOREY 2
+Name: Temp. Level 1
+Long name: Temp. Level 1
+Elevation: 41.000 m
+GlobalId: 3ZzoOjFXnEORzoSmTTI5Au
+Structural elements assigned to this storey:
+  IfcColumn: 0
+  IfcBeam: 0
+  IfcSlab: 0
+  IfcWall: 0
+  IfcFooting: 0
+
+STOREY 3
+Name: E1_1. sal
+Long name: E1_1. sal
+Elevation: 44.670 m
+GlobalId: 3ZF6NQE2rFeveujuF0fRjB
+Structural elements assigned to this storey:
+  IfcColumn: 117
+  IfcBeam: 0
+  IfcSlab: 3
+  IfcWall: 52
+  IfcFooting: 0
+
+STOREY 4
+Name: Temp. Level 1
+Long name: Temp. Level 1
+Elevation: 44.670 m
+GlobalId: 3mnSYPA0z1thcqROYMFhjd
+Structural elements assigned to this storey:
+  IfcColumn: 0
+  IfcBeam: 0
+  IfcSlab: 0
+  IfcWall: 0
+  IfcFooting: 0
+
+STOREY 5
+Name: E2_2. sal
+Long name: E2_2. sal
+Elevation: 48.710 m
+GlobalId: 282$7FxSPACu3DeBHb1QrU
+Structural elements assigned to this storey:
+  IfcColumn: 0
+  IfcBeam: 1
+  IfcSlab: 0
+  IfcWall: 3
+  IfcFooting: 0
+
+STOREY 6
+Name: ET_TAG
+Long name: ET_TAG
+Elevation: 51.420 m
+GlobalId: 3QZVLZCj9D6uv_PT97nOot
+Structural elements assigned to this storey:
+  IfcColumn: 0
+  IfcBeam: 0
+  IfcSlab: 0
+  IfcWall: 0
+  IfcFooting: 0
+
+STRUCTURAL ELEMENTS WITHOUT A STOREY
+-------------------------------------------------------
+IfcColumn: 0
+IfcBeam: 0
+IfcSlab: 0
+IfcWall: 0
+IfcFooting: 0
+
+REPORT CLAIMS FOR MANUAL COMPARISON
+-------------------------------------------------------
+Architecture, page 6: Ground floor, first floor and second floor = 3 storeys.
+Structure, page 17: Basement and one floor above ground = 2 storeys.
+
+Compare these claims with the IFC storey names, elevations and structural element counts listed above.
