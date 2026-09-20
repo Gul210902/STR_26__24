@@ -121,10 +121,10 @@ to incorrect structural assessment, modelling or quantity calculations.
 
 ### Fact-check method
 
-The claim was checked in `B308X.ifc` using Python and IfcOpenShell. The
-script extracted all `IfcColumn` objects, searched their names, tags and
-type information for S114, extracted their cross-section dimensions and
-identified the largest detected rectangular column section.
+The claim was checked in `B308X.ifc` using Python and IfcOpenShell. The script (issue_4_column_fact_check.py) extracted all `IfcColumn` objects, searched their names, tags and type information for S114, extracted their cross-section dimensions and identified the largest detected rectangular column section.
+
+The generated output is available in (issue_4_column_results.txt).
+
 
 ### Script results
 
