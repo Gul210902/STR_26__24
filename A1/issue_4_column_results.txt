@@ -1,0 +1,38 @@
+FACT CHECK: COLUMN DIMENSION SUMMARY
+============================================================
+Model checked: B308X.ifc
+IFC schema: IFC4X3
+Total IfcColumn objects: 211
+Target column: S114
+Target matches found: 0
+
+REPORT CLAIMS
+------------------------------------------------------------
+Written summary: largest column cross-section = 450 x 200 mm
+Table 3: column S114 cross-section = 520 x 200 mm
+
+RESULTS FOR S114
+------------------------------------------------------------
+No IfcColumn containing the identifier S114 was found in Name, Tag, ObjectType or type information.
+COLUMN SECTION DISTRIBUTION
+------------------------------------------------------------
+1090.0 x 200.0 mm: 8 occurrence(s)
+400.0 x 390.0 mm: 2 occurrence(s)
+760.0 x 200.0 mm: 1 occurrence(s)
+640.0 x 200.0 mm: 3 occurrence(s)
+360.0 x 330.0 mm: 2 occurrence(s)
+580.0 x 200.0 mm: 3 occurrence(s)
+380.0 x 200.0 mm: 1 occurrence(s)
+360.0 x 200.0 mm: 23 occurrence(s)
+250.0 x 250.0 mm: 14 occurrence(s)
+310.0 x 200.0 mm: 2 occurrence(s)
+300.0 x 200.0 mm: 46 occurrence(s)
+250.0 x 240.0 mm: 1 occurrence(s)
+240.0 x 200.0 mm: 25 occurrence(s)
+200.0 x 200.0 mm: 57 occurrence(s)
+240.0 x 145.0 mm: 2 occurrence(s)
+200.0 x 120.0 mm: 21 occurrence(s)
+
+Largest detected rectangular section by area: 1090.0 x 200.0 mm
+
+Columns without extractable dimensions: 0
