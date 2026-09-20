@@ -38,9 +38,10 @@ levels or whether some levels were excluded from the structural assessment.
 
 ### Fact-check method
 
-The claim was checked in `B308X.ifc` using Python and IfcOpenShell. The
-script extracted all `IfcBuildingStorey` objects and recorded their names,
-elevations and assigned structural elements.
+The claim was checked in `B308X.ifc` using Python and IfcOpenShell. The script (issue_1_storey_fact_check.py) extracted all `IfcBuildingStorey` objects and recorded their names, elevations and assigned structural elements.
+
+The generated output is available in (issue_1_storey_results.txt).
+
 
 ### Script results
 
