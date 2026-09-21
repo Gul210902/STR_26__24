@@ -15,8 +15,7 @@
 A: 0. This is the first time that both of us are coding in Python
 
 Our group’s focus area is columns, and we work as analysts
-# Assignment A2 - Forensic BIM
-# A2b: Identify Claim
+## A2b: Identify Claim
 Q: Select which building(s) to focus on for your focus area
 
 A: We'll be focusing at building #2516
