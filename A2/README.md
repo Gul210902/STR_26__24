@@ -14,48 +14,62 @@ A: 0. This is the first time that both of us are coding in Python
 Our group’s focus area is columns, and we work as analysts
 
 ## A2b: Identify Claim
-* **Selected Building:** Building #2601
-* **Claim to Check:** Verification of structural integrity and cross-sectional dimensions of primary load-bearing structural elements (beams and columns) against design requirements.
-* **Description:** The report for Building #2601 specifies design requirements for load-bearing elements. We aim to verify whether the structural elements modeled in the OpenBIM IFC file meet the required geometric and material specifications (cross-sectional area, structural function, and material attributes).
-* **Justification:** Ensuring structural safety and compliance is critical in early design phases. Automated verification prevents costly design errors and structural miscalculations before assembly.
+* **Selected Building:** Building 2601 (using data from the Building 308 report).
+* **The Claim:** The client report mentions that some of the current structural elements are not fully utilized, which means there is a potential opportunity to add an extra floor to the building[cite: 17]. 
+* **Description of the Claim:** We want to calculate the current axial capacity of the existing structural columns and compare it against the new load conditions. This will tell us if the columns are strong enough to support the extra weight of a new top floor. 
+* **Justification:** Adding a whole new floor will add a lot of heavy loads to the existing building. We want to verify if the existing columns can safely handle this extra weight, assuming we use the "super-light concrete" floors suggested in the report[cite: 17].
 
 ## A2c: Use Case
-* **How to check:** Extract beam and column geometry and material parameters from the IFC model, compare them against structural calculations/design limits, and highlight non-compliant elements.
-* **Timing:** Conceptual and Detailed Design Phase.
-* **Information required:** Geometric properties (length, width, depth, volume) and structural material properties.
-* **Phase:** Design Phase.
-* **BIM Purpose:** Analyse & Communicate.
-* **BIM Use Case:** Structural Analysis & Model Checking / Rule Checking.
+* **How to check:** * Extract the dimensions and geometry of the columns from the IFC model[cite: 31].
+  1. Check the current strength of the columns:
+   * Extract the dimensions and geometry of the columns from the IFC model[cite: 31].
+   * Check the concrete material properties[cite: 31].
+   * If the reinforcement data is missing, we will just assume a minimum standard amount[cite: 31].
+   * Calculate how much weight the columns can currently hold[cite: 31].
+2. Apply the new loads:
+   * Calculate the extra dead load from the new super-light concrete floor[cite: 17].
+   * Add the standard Danish imposed load requirement of 4.5 kN/m²[cite: 17].
+3. Compare the new loads with the existing column capacity to see if the results are acceptable[cite: 31].
+4. Generate a report that shows which columns pass and which ones fail[cite: 31].
+**2. When would this claim need to be checked?**
+During the design phase, when the architects and engineers are trying to figure out if adding a floor is actually possible[cite: 31].
+**3. What information does this claim rely on?**
+Mainly the dimensions of the columns in the IFC model, and the weight of the new floor materials[cite: 31].
+**4. What phase?**
+Design Phase[cite: 31].
+**5. What BIM purpose is required?**
+Analyse[cite: 31].
+**6. Closest BIM Use Cases:**
+* **08: Engineering Analysis:** Ensures structural safety and compliance with building codes[cite: 31].
+* **xx: Adaptive Reuse Analysis (Custom):** Checking old structures so we can expand them safely instead of tearing them down[cite: 31].
 
 ### Process BPMN Diagram
 ![BPMN Process Diagram](./IMG/A2c_process_diagram.svg)
 
 ## A2d: Scope the use case
-The automated Python tool using `IfcOpenShell` will replace the manual verification stage. It will automatically parse the IFC model, identify `IfcBeam` and `IfcColumn` entities, extract structural dimensions and material properties, evaluate compliance against pre-defined structural criteria, and output an automated validation report.
+The specific scope for our Python tool is just the math and reporting part. It will automatically extract the column geometry, import the new floor weights, calculate if the columns are strong enough, and generate a final pass/fail report.
 
-![BPMN Scoped Diagram](./IMG/A2d_scoped_diagram.svg)
+### Process BPMN Diagram
+![BPMN Process Diagram](./IMG/A2c_process_diagram.svg)
 
 ## A2e: Tool Idea
-* **Description:** An open-source Python tool leveraging `IfcOpenShell` that scans an IFC model for structural load-bearing elements (`IfcBeam`, `IfcColumn`), verifies their cross-sectional properties and material data, and generates a compliance report for structural engineers.
-* **Business Value:** Reduces manual checking time by over 80%, minimizes human error, and improves structural coordination across teams.
-* **Societal Value:** Enhances structural safety, optimizes material usage to reduce concrete waste, and supports sustainable construction practices.
+* **Description:** Our idea is to build a Python tool using IfcOpenShell to automatically check if existing columns can support a new floor[cite: 31]. The script will read the IFC model to get the column sizes and concrete grades[cite: 31]. Then, it will apply the new floor loads and check the utilization ratio[cite: 31]. Finally, it prints a report telling the engineers exactly which columns need to be made bigger[cite: 31].
+* 
+* **Business Value:**
+* * **Saves Time:** It automates boring manual calculations, reducing the time engineers spend on data transfer[cite: 31].
+* **Early Risk Detection:** It helps designers know right away if their idea for an extra floor is too heavy, avoiding expensive redesigns later[cite: 31].
+**Societal Value:**
+* **Sustainability:** Adding a floor to an old building is much better for the environment than tearing it down. This tool helps avoid wasting materials by preventing over-dimensioning[cite: 31].
+* **Safety:** It makes sure the old columns won't collapse under the new modern load requirements[cite: 31]..
 
 ![Tool BPMN Diagram](./IMG/A2e_tool_diagram.svg)
 
 ## A2f: Information Requirements
-* **Required Information:** Element structural classification, geometry (profile dimensions, length), structural load-bearing property flag, and material association.
-* **IFC Location:** 
-  * `IfcBeam` and `IfcColumn` entities
-  * `IfcPropertySet` (e.g., `Pset_BeamCommon`, `Pset_ColumnCommon`)
-  * `LoadBearing` attribute (Boolean)
-  * `IfcMaterial` / `IfcMaterialSelect` via `IfcRelAssociatesMaterial`
-* **In Model:** Yes, these standard elements and properties exist in standard IFC4 / IFC2X3 structural models.
-* **IfcOpenShell Implementation Plan:**
-  * Use `ifcopenshell.open()` to load the model.
-  * Use `file.by_type('IfcBeam')` and `file.by_type('IfcColumn')` to filter structural elements.
-  * Retrieve property sets using `ifcopenshell.util.element.get_psets()`.
-  * Extract bounding box / quantities for geometric validation.
+* **Information needed from the model:** Column dimensions, number of columns, and concrete design values[cite: 31].
+* **Where is this in IFC?** We assume this data is inside `IfcColumn` and standard property sets[cite: 31].
+* **Is it in the model?** The geometry is there, but data about the steel reinforcement is probably missing, so we will have to assume the minimum[cite: 31].
+* **How to get it in IfcOpenShell?** We will write a script to pull the data from `IfcColumn`.
+* **Learning Requirements:** We need to learn how to use Python to get data out of an IFC model, run the math, and print a text report[cite: 31].
 
-## A2g: Software License
-* **Selected License:** MIT License
-* **Justification:** The MIT License is a permissive open-source license that allows free use, modification, and distribution with minimal restrictions. It is ideal for educational OpenBIM tools and encourages collaboration within the AEC industry.
+## A2g: Identify Appropriate Software License
+We will use Python and Blender 4.5 as our main software[cite: 31]. We will probably release the final code under an open-source license like MIT. a permissive open-source license that allows free use, modification, and distribution with minimal restrictions. It is ideal for educational OpenBIM tools and encourages collaboration within the AEC industry.
