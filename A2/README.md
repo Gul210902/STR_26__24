@@ -20,7 +20,7 @@ Our group’s focus area is columns, and we work as analysts
 * **Justification:** Adding a whole new floor will add a lot of heavy loads to the existing building. We want to verify if the existing columns can safely handle this extra weight, assuming we use the "super-light concrete" floors suggested in the report[cite: 17].
 
 ## A2c: Use Case
-* **How to check:** * Extract the dimensions and geometry of the columns from the IFC model[cite: 31].
+**1. How would you check this claim?**
   1. Check the current strength of the columns:
    * Extract the dimensions and geometry of the columns from the IFC model[cite: 31].
    * Check the concrete material properties[cite: 31].
