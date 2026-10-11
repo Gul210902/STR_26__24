@@ -8,7 +8,6 @@
 **Group number**: 24
 
 ## A2a: About our group
-- **Role:** Analyst group
 - **Focus area:** Structural Analysis
 - **Role:** Analyst
 - **I am confident coding in Python:** 0 - Strongly Disagree (This is the first time that both of us are coding in Python.)
