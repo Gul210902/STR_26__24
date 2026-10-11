@@ -7,11 +7,11 @@
 
 **Group number**: 24
 
-**Focus area**: Structure
 ## A2a: About our group
-**Q: How much do you agree with the following statement: I am confident coding in Python**
-A: 0. This is the first time that both of us are coding in Python
-Our group’s focus area is columns, and we work as analysts
+- **Role:** Analyst group
+- **Focus area:** Structural Analysis
+- **Role:** Analyst
+- **I am confident coding in Python:** 0 - Strongly Disagree (This is the first time that both of us are coding in Python.)
 
 ## A2b: Identify Claim
 * **Selected Building:** Building 2601 (using data from the Building 308 report).
