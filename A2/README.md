@@ -13,10 +13,10 @@
 - **I am confident coding in Python:** 0 - Strongly Disagree (This is the first time that both of us are coding in Python.)
 
 ## A2b: Identify Claim
-* **Selected Building:** Building 2601 (using data from the Building 308 report).
-* **The Claim:** The client report mentions that some of the current structural elements are not fully utilized, which means there is a potential opportunity to add an extra floor to the building[cite: 17]. 
+* **Selected Building:** Building 2608 (using report '26-08-A-ClientReport-Anon').
+* **Claim:** The existing structural system has sufficient reserve capacity to accommodate the additional loads from a vertical extension of up to two to three floors, except for highly utilized columns and S206 columns.[cite: 24]. 
 * **Description of the Claim:** We want to calculate the current axial capacity of the existing structural columns and compare it against the new load conditions. This will tell us if the columns are strong enough to support the extra weight of a new top floor. 
-* **Justification:** Adding a whole new floor will add a lot of heavy loads to the existing building. We want to verify if the existing columns can safely handle this extra weight, assuming we use the "super-light concrete" floors suggested in the report[cite: 17].
+* **Justification:** This claim was selected because the feasibility of adding two to three new floors depends directly on the capacity of the existing structural system. The report states that many structural elements are under-utilized, but it also identifies highly utilized columns and S206 columns as critical exceptions. Therefore, checking the remaining capacity of the existing columns is important to verify whether the proposed vertical extension is structurally feasible and to identify where strengthening, replacement, or redesign may be required.[cite: 24].
 
 ## A2c: Use Case
 **1. How would you check this claim?**
