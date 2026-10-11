@@ -102,8 +102,12 @@ The editable BPMN file is available here:
 [A2d Scoped BPMN](IMG/A2d_scoped_diagram.bpmn)
 
 ## A2e: Tool Idea
-* **Description:** Our idea is to build a Python tool using IfcOpenShell to automatically check if existing columns can support a new floor[cite: 31]. The script will read the IFC model to get the column sizes and concrete grades[cite: 31]. Then, it will apply the new floor loads and check the utilization ratio[cite: 31]. Finally, it prints a report telling the engineers exactly which columns need to be made bigger[cite: 31].
-* 
+* **Description:** Our idea is to develop an OpenBIM structural assessment tool in Python using IfcOpenShell. The tool will read the IFC model and extract the required parameters from existing structural columns, primarily `IfcColumn`, including geometry and available material information. Additional structural information and load data that are not available in the IFC model can be provided as external inputs.
+
+The Python tool will then apply the relevant load combinations and partial safety factors, calculate the axial resistance and utilization of the existing columns under the combined existing and additional loads from the proposed vertical extension, and compare the results with the allowable capacity.
+
+The tool will generate a structural assessment report showing the column ID, calculated resistance, utilization ratio, and assessment status. Columns that exceed the acceptable utilization will be flagged for further structural assessment, strengthening, replacement, or redesign.
+
 * **Business Value:**
 * * **Saves Time:** It automates boring manual calculations, reducing the time engineers spend on data transfer[cite: 31].
 * **Early Risk Detection:** It helps designers know right away if their idea for an extra floor is too heavy, avoiding expensive redesigns later[cite: 31].
