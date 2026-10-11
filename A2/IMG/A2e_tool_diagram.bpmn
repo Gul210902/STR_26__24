@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+  xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0"
+  xmlns:color="http://www.omg.org/spec/BPMN/non-normative/color/1.0"
+  id="Definitions_1ixb66n"
+  targetNamespace="http://bpmn.io/schema/bpmn"
+  exporter="bpmn-js (https://demo.bpmn.io)"
+  exporterVersion="18.31.0">
+
+  <bpmn:process id="Process_1xg5vc4" isExecutable="false">
+
+    <bpmn:startEvent id="StartEvent_09b8lt9">
+      <bpmn:outgoing>Flow_01b69o7</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:task id="Activity_0jjwrj3"
+      name="Start Event: The process begins once load data from slabs and columns is available">
+      <bpmn:incoming>Flow_01b69o7</bpmn:incoming>
+      <bpmn:outgoing>Flow_16owx5p</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:task id="Activity_1ntwjdr"
+      name="Calculate Slab and Column Loads: The script gathers load data from previous structural analysis or simulation results.">
+      <bpmn:incoming>Flow_16owx5p</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qrhe3o</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:task id="Activity_0j2ruix"
+      name="Calculate Column Capacity – Python scripts, using IfcOpenShell or other tools, compute the design axial capacity NRd for each column based on geometry, material data, and reinforcement details.">
+      <bpmn:incoming>Flow_1qrhe3o</bpmn:incoming>
+      <bpmn:outgoing>Flow_0urgzv9</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:exclusiveGateway id="Gateway_08c38qu">
+      <bpmn:incoming>Flow_0urgzv9</bpmn:incoming>
+      <bpmn:outgoing>Flow_0vwa8n1</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0hyczk7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+
+    <bpmn:task id="Activity_0axoawz"
+      name="No → Process requires revision. If capacity is exceeded, the process stops and flags the relevant columns for redesign or further review.">
+      <bpmn:incoming>Flow_0vwa8n1</bpmn:incoming>
+    </bpmn:task>
+
+    <bpmn:task id="Activity_0ifdfgt"
+      name="Yes → Generate Report in Python. If utilization is acceptable, the script compiles all results into a formatted report including column IDs, capacities, and utilization factors.">
+      <bpmn:incoming>Flow_0hyczk7</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hqzdzb</bpmn:outgoing>
+    </bpmn:task>
+
+    <bpmn:task id="Activity_09itp6b"
+      name="End Event – The process completes when all columns are evaluated and the report is generated.">
+      <bpmn:incoming>Flow_0hqzdzb</bpmn:incoming>
+    </bpmn:task>
+
+    <bpmn:textAnnotation id="TextAnnotation_0dmdx60">
+      <bpmn:text>Decision: Capacity Utilization OK? The process evaluates whether the calculated load/utilization ratio for each column is within acceptable limits.</bpmn:text>
+    </bpmn:textAnnotation>
+
+    <bpmn:association id="Association_1jjfolh"
+      sourceRef="Gateway_08c38qu"
+      targetRef="TextAnnotation_0dmdx60"
+      associationDirection="None" />
+
+    <bpmn:sequenceFlow id="Flow_01b69o7" sourceRef="StartEvent_09b8lt9" targetRef="Activity_0jjwrj3" />
+    <bpmn:sequenceFlow id="Flow_16owx5p" sourceRef="Activity_0jjwrj3" targetRef="Activity_1ntwjdr" />
+    <bpmn:sequenceFlow id="Flow_1qrhe3o" sourceRef="Activity_1ntwjdr" targetRef="Activity_0j2ruix" />
+    <bpmn:sequenceFlow id="Flow_0urgzv9" sourceRef="Activity_0j2ruix" targetRef="Gateway_08c38qu" />
+    <bpmn:sequenceFlow id="Flow_0vwa8n1" sourceRef="Gateway_08c38qu" targetRef="Activity_0axoawz" />
+    <bpmn:sequenceFlow id="Flow_0hyczk7" sourceRef="Gateway_08c38qu" targetRef="Activity_0ifdfgt" />
+    <bpmn:sequenceFlow id="Flow_0hqzdzb" sourceRef="Activity_0ifdfgt" targetRef="Activity_09itp6b" />
+
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1xg5vc4">
+
+      <bpmndi:BPMNShape id="StartEvent_09b8lt9_di" bpmnElement="StartEvent_09b8lt9">
+        <dc:Bounds x="156" y="82" width="36" height="36" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Activity_0jjwrj3_di" bpmnElement="Activity_0jjwrj3">
+        <dc:Bounds x="270" y="40" width="140" height="120" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Activity_1ntwjdr_di" bpmnElement="Activity_1ntwjdr">
+        <dc:Bounds x="510" y="40" width="145" height="120" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Activity_0j2ruix_di" bpmnElement="Activity_0j2ruix">
+        <dc:Bounds x="780" y="35" width="205" height="130" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Gateway_08c38qu_di" bpmnElement="Gateway_08c38qu" isMarkerVisible="true"
+        bioc:stroke="#5b176d" bioc:fill="#e1bee7"
+        color:border-color="#5b176d" color:background-color="#e1bee7">
+        <dc:Bounds x="1075" y="75" width="50" height="50" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Activity_0axoawz_di" bpmnElement="Activity_0axoawz">
+        <dc:Bounds x="1022" y="-110" width="155" height="120" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Activity_0ifdfgt_di" bpmnElement="Activity_0ifdfgt">
+        <dc:Bounds x="1290" y="40" width="170" height="120" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="Activity_09itp6b_di" bpmnElement="Activity_09itp6b">
+        <dc:Bounds x="1570" y="40" width="145" height="120" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNShape id="TextAnnotation_0dmdx60_di" bpmnElement="TextAnnotation_0dmdx60">
+        <dc:Bounds x="1050" y="180" width="228" height="89" />
+      </bpmndi:BPMNShape>
+
+      <bpmndi:BPMNEdge id="Flow_01b69o7_di" bpmnElement="Flow_01b69o7">
+        <di:waypoint x="192" y="100" />
+        <di:waypoint x="270" y="100" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_16owx5p_di" bpmnElement="Flow_16owx5p">
+        <di:waypoint x="410" y="100" />
+        <di:waypoint x="510" y="100" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_1qrhe3o_di" bpmnElement="Flow_1qrhe3o">
+        <di:waypoint x="655" y="100" />
+        <di:waypoint x="780" y="100" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_0urgzv9_di" bpmnElement="Flow_0urgzv9">
+        <di:waypoint x="985" y="100" />
+        <di:waypoint x="1075" y="100" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_0vwa8n1_di" bpmnElement="Flow_0vwa8n1">
+        <di:waypoint x="1100" y="75" />
+        <di:waypoint x="1100" y="10" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_0hyczk7_di" bpmnElement="Flow_0hyczk7">
+        <di:waypoint x="1125" y="100" />
+        <di:waypoint x="1290" y="100" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Flow_0hqzdzb_di" bpmnElement="Flow_0hqzdzb">
+        <di:waypoint x="1460" y="100" />
+        <di:waypoint x="1570" y="100" />
+      </bpmndi:BPMNEdge>
+
+      <bpmndi:BPMNEdge id="Association_1jjfolh_di" bpmnElement="Association_1jjfolh">
+        <di:waypoint x="1100" y="125" />
+        <di:waypoint x="1100" y="180" />
+      </bpmndi:BPMNEdge>
+
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
