@@ -109,11 +109,11 @@ The Python tool will then apply the relevant load combinations and partial safet
 The tool will generate a structural assessment report showing the column ID, calculated resistance, utilization ratio, and assessment status. Columns that exceed the acceptable utilization will be flagged for further structural assessment, strengthening, replacement, or redesign.
 
 * **Business Value:**
-* * **Saves Time:** It automates boring manual calculations, reducing the time engineers spend on data transfer[cite: 31].
-* **Early Risk Detection:** It helps designers know right away if their idea for an extra floor is too heavy, avoiding expensive redesigns later[cite: 31].
+* * **Saves Time:** It automates boring manual calculations, reducing the time engineers spend on data transfer.
+* **Early Risk Detection:** It helps designers know right away if their idea for an extra floor is too heavy, avoiding expensive redesigns later.
 **Societal Value:**
-* **Sustainability:** Adding a floor to an old building is much better for the environment than tearing it down. This tool helps avoid wasting materials by preventing over-dimensioning[cite: 31].
-* **Safety:** It makes sure the old columns won't collapse under the new modern load requirements[cite: 31]..
+* **Sustainability:** Adding a floor to an old building is much better for the environment than tearing it down. This tool helps avoid wasting materials by preventing over-dimensioning.
+* **Safety:** It makes sure the old columns won't collapse under the new modern load requirements.
 
 ![Tool BPMN Diagram](./IMG/A2e_tool_diagram.svg)
 
