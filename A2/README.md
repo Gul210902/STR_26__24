@@ -19,31 +19,74 @@
 * **Justification:** This claim was selected because the feasibility of adding two to three new floors depends directly on the capacity of the existing structural system. The report states that many structural elements are under-utilized, but it also identifies highly utilized columns and S206 columns as critical exceptions. Therefore, checking the remaining capacity of the existing columns is important to verify whether the proposed vertical extension is structurally feasible and to identify where strengthening, replacement, or redesign may be required.[cite: 24].
 
 ## A2c: Use Case
-**1. How would you check this claim?**
-  1. Check the current strength of the columns:
-   * Extract the dimensions and geometry of the columns from the IFC model[cite: 31].
-   * Check the concrete material properties[cite: 31].
-   * If the reinforcement data is missing, we will just assume a minimum standard amount[cite: 31].
-   * Calculate how much weight the columns can currently hold[cite: 31].
-2. Apply the new loads:
-   * Calculate the extra dead load from the new super-light concrete floor[cite: 17].
-   * Add the standard Danish imposed load requirement of 4.5 kN/m²[cite: 17].
-3. Compare the new loads with the existing column capacity to see if the results are acceptable[cite: 31].
-4. Generate a report that shows which columns pass and which ones fail[cite: 31].
-**2. When would this claim need to be checked?**
-During the design phase, when the architects and engineers are trying to figure out if adding a floor is actually possible[cite: 31].
-**3. What information does this claim rely on?**
-Mainly the dimensions of the columns in the IFC model, and the weight of the new floor materials[cite: 31].
-**4. What phase?**
-Design Phase[cite: 31].
-**5. What BIM purpose is required?**
-Analyse[cite: 31].
-**6. Closest BIM Use Cases:**
-* **08: Engineering Analysis:** Ensures structural safety and compliance with building codes[cite: 31].
-* **xx: Adaptive Reuse Analysis (Custom):** Checking old structures so we can expand them safely instead of tearing them down[cite: 31].
+## A2c: Use Case
 
-### Process BPMN Diagram
-![BPMN Process Diagram](./IMG/A2c_process_diagram.svg)
+### 1. How would we check the claim?
+
+The claim will be checked by performing a preliminary structural capacity assessment of the existing columns under the additional vertical loads caused by the proposed vertical extension.
+
+The process consists of:
+
+1. Load the existing IFC model.
+2. Extract the geometry and available material properties of the existing structural columns from the IFC model, primarily from `IfcColumn`.
+3. Obtain the existing structural/material information required for the capacity calculation.
+4. Define the additional loads produced by the proposed vertical extension.
+5. Calculate the axial load-bearing capacity of the relevant existing columns.
+6. Calculate the resulting column utilization under the existing and additional loads.
+7. Compare the calculated utilization with the allowable capacity.
+8. Identify columns that have sufficient capacity and flag columns that require further structural assessment, strengthening, replacement, or redesign.
+9. Generate a structural assessment report.
+
+### 2. When would this claim need to be checked?
+
+The claim should be checked during the design phase, before the vertical extension is approved and developed in detail. The assessment can help the structural engineer determine whether the proposed additional floors are feasible and identify critical existing columns at an early stage.
+
+### 3. What information does the claim rely on?
+
+The assessment requires:
+
+- Existing column geometry and dimensions
+- Column locations
+- Column material properties
+- Available reinforcement information
+- Existing loads on the columns
+- Additional dead loads from the proposed extension
+- Additional imposed loads
+- Relevant structural design parameters and safety requirements
+
+The IFC model is used to obtain available geometric and material information about the structural columns. Additional loading and structural design information may need to come from external engineering data or assumptions where this information is not contained in the IFC model.
+
+### 4. Phase
+
+**Design phase**
+
+The check is carried out while evaluating the feasibility of the proposed vertical extension.
+
+### 5. BIM Purpose
+
+**Analyse – Validate**
+
+The main BIM purpose is **Analyse**, specifically to validate whether the existing structural columns have sufficient capacity for the additional loading.
+
+Secondary purposes include **Gather**, because information is extracted from the IFC model, and **Communicate**, because the results are presented to the structural engineer in a report.
+
+### 6. Closest BIM Use Case
+
+The closest existing BIM use case is:
+
+**08: Structural Analysis**
+
+This BIM use case describes the use of BIM information together with structural analysis methods to evaluate the behaviour and performance of a structural system.
+
+Our use case applies this principle to an existing building by checking the capacity of existing columns under additional vertical loads from a proposed building extension.
+
+### 7. Process BPMN Diagram
+
+![A2c Use Case BPMN](IMG/A2c_process_diagram.svg)
+
+The editable BPMN file is available here:
+
+[A2c Process BPMN](IMG/A2c_process_diagram.bpmn)
 
 ## A2d: Scope the use case
 The specific scope for our Python tool is just the math and reporting part. It will automatically extract the column geometry, import the new floor weights, calculate if the columns are strong enough, and generate a final pass/fail report.
