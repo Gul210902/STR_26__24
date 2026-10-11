@@ -89,8 +89,32 @@ The editable BPMN file is available here:
 
 [A2c Process BPMN](IMG/A2c_process_diagram.bpmn)
 
-## A2d: Scope the use case
-The specific scope for our Python tool is just the math and reporting part. It will automatically extract the column geometry, import the new floor weights, calculate if the columns are strong enough, and generate a final pass/fail report.
+## A2d: Scope the Use Case
+
+From the complete use case, the proposed Python/IfcOpenShell tool will automate the part of the workflow related to IFC data extraction, load processing, structural capacity checking, and reporting.
+
+The scope of the proposed tool includes:
+
+1. Loading the IFC model using IfcOpenShell.
+2. Extracting the required column parameters from `IfcColumn`, including geometry and available material information.
+3. Importing the existing and additional loads for the proposed vertical extension.
+4. Applying the relevant design load combinations and partial safety factors using Python.
+5. Calculating the axial resistance and utilization of the existing columns.
+6. Comparing the calculated utilization with the allowable capacity.
+7. Flagging columns that require further assessment or redesign.
+8. Generating a structural assessment report showing the utilization and status of the checked columns.
+
+Tasks outside the tool scope, such as verifying missing structural information, making engineering assumptions, and deciding how to strengthen, replace, or redesign critical columns, remain the responsibility of the structural engineer.
+
+The highlighted part of the BPMN diagram shows the processes that will be automated by the proposed Python/IfcOpenShell tool.
+
+### Scoped BPMN Diagram
+
+![A2d Scoped Use Case BPMN](IMG/A2d_scoped_diagram.svg)
+
+The editable BPMN file is available here:
+
+[A2d Scoped BPMN](IMG/A2d_scoped_diagram.bpmn)
 
 ### Process BPMN Diagram
 ![BPMN Process Diagram](./IMG/A2c_process_diagram.svg)
