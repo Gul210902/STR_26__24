@@ -22,8 +22,6 @@
 
 ### 1. How to check the claim?
 
-### 1. How would we check the claim?
-
 The claim will be checked by performing a preliminary structural capacity assessment of the existing columns under the additional vertical loads caused by the proposed vertical extension.
 
 The process consists of:
@@ -40,7 +38,7 @@ The process consists of:
 10. Identify columns that have sufficient capacity and flag columns that require further structural assessment, strengthening, replacement, or redesign.
 11. Generate a structural assessment report showing the utilization and status of the checked columns.
 
-### 2. When would this claim need to be checked?
+### 2. When this claim need to be checked?
 
 The claim should be checked during the design phase, before the vertical extension is approved and developed in detail. The assessment can help the structural engineer determine whether the proposed additional floors are feasible and identify critical existing columns at an early stage.
 
