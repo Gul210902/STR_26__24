@@ -83,7 +83,7 @@ Our use case applies this principle to an existing building by checking the capa
 
 ### 7. Process BPMN Diagram
 
-![A2c Use Case BPMN](A2/IMG/A2c_process_diagram.svg)
+![A2c Use Case BPMN](IMG/A2c_process_diagram.svg)
 
 The editable BPMN file is available here:
 
