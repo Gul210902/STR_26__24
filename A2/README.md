@@ -116,9 +116,6 @@ The editable BPMN file is available here:
 
 [A2d Scoped BPMN](IMG/A2d_scoped_diagram.bpmn)
 
-### Process BPMN Diagram
-![BPMN Process Diagram](./IMG/A2c_process_diagram.svg)
-
 ## A2e: Tool Idea
 * **Description:** Our idea is to build a Python tool using IfcOpenShell to automatically check if existing columns can support a new floor[cite: 31]. The script will read the IFC model to get the column sizes and concrete grades[cite: 31]. Then, it will apply the new floor loads and check the utilization ratio[cite: 31]. Finally, it prints a report telling the engineers exactly which columns need to be made bigger[cite: 31].
 * 
