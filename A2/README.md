@@ -118,11 +118,27 @@ The tool will generate a structural assessment report showing the column ID, cal
 ![Tool BPMN Diagram](./IMG/A2e_tool_diagram.svg)
 
 ## A2f: Information Requirements
-* **Information needed from the model:** Column dimensions, number of columns, and concrete design values[cite: 31].
-* **Where is this in IFC?** We assume this data is inside `IfcColumn` and standard property sets[cite: 31].
-* **Is it in the model?** The geometry is there, but data about the steel reinforcement is probably missing, so we will have to assume the minimum[cite: 31].
-* **How to get it in IfcOpenShell?** We will write a script to pull the data from `IfcColumn`.
-* **Learning Requirements:** We need to learn how to use Python to get data out of an IFC model, run the math, and print a text report[cite: 31].
+
+| Requirement | Where in IFC | In our model? | How we get it with IfcOpenShell | Notes / Learning Need |
+|---|---|---|---|---|
+| Units | `IfcProject.UnitsInContext` → `IfcSIUnit` / `IfcConversionBasedUnit` | Yes / to verify | Read the project units and convert the extracted geometry to a consistent unit system | Needed so geometry and structural calculations use consistent units |
+| Column elements | `IfcColumn` | Yes | `model.by_type("IfcColumn")` | Main structural elements checked by the tool |
+| GlobalId / Name | `IfcColumn.GlobalId`, `IfcColumn.Name` | Yes | `column.GlobalId`, `column.Name` | Used to identify and trace each checked column |
+| Column geometry / cross-section dimensions | Geometry representation associated with `IfcColumn` | Yes / to verify | Use IfcOpenShell geometry functions and, where available, profile/section information | Need to learn how to reliably extract column width, depth, cross-sectional area and height |
+| Column location / storey | `IfcLocalPlacement`, `IfcBuildingStorey`, spatial containment relationships | Yes / to verify | Read the object placement and spatial containment of each `IfcColumn` | Needed to locate columns and relate them to the correct building storey |
+| Material information | `IfcRelAssociatesMaterial` → `IfcMaterial` or related material entities | To verify | Read the material relationships associated with each `IfcColumn` | Need to check whether concrete grade and required material properties are actually included in the IFC model |
+| Reinforcement information | Reinforcement-related IFC entities or external structural documentation | To verify | Search for available reinforcement entities/relationships using IfcOpenShell | If reinforcement is missing, obtain it from existing structural drawings/documentation or treat it as external input |
+| Existing column loads | Structural analysis information if included; otherwise external input | To verify | Read from available structural-analysis data if present, otherwise import separately | Required to determine the current load acting on each column |
+| Additional permanent loads from the vertical extension | External design input | No | Import from an external file or user input | Includes additional self-weight from the proposed floors and structural elements |
+| Additional variable / imposed loads | External design input | No | Import from an external file or user input | Depends on the intended use of the proposed additional floors |
+| Structural design codes | External reference | No | Implement the required rules in Python | Need to identify and apply the relevant design standards |
+| Load combinations | Calculated from external load data according to the selected design code | No | Calculate in Python | Need to learn how to implement the relevant load combinations correctly |
+| Partial safety factors | Defined by the relevant structural design standards | No | Implement as Python parameters | Applied to loads and material/design resistance as required |
+| Axial design load on each column | Calculated value | No | Combine existing and additional design loads in Python | Used as the design action for the capacity check |
+| Column axial resistance | Calculated value | No | Calculate in Python using extracted geometry, material and reinforcement information | Core structural capacity calculation of the tool |
+| Column utilization ratio | Calculated value | No | Calculate in Python by comparing the design load with the column resistance | Used to determine whether the column has sufficient capacity |
+| Assessment status | Calculated output | No | Classify each column in Python based on the utilization result | Used to flag columns as acceptable or requiring further assessment/redesign |
+| Structural assessment report | Tool output | No | Generate automatically in Python | Should include column ID, resistance, applied load, utilization and assessment status |
 
 ## A2g: Identify Appropriate Software License
 We will use Python and Blender 4.5 as our main software[cite: 31]. We will probably release the final code under an open-source license like MIT. a permissive open-source license that allows free use, modification, and distribution with minimal restrictions. It is ideal for educational OpenBIM tools and encourages collaboration within the AEC industry.
