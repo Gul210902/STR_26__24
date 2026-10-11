@@ -19,7 +19,8 @@
 * **Justification:** This claim was selected because the feasibility of adding two to three new floors depends directly on the capacity of the existing structural system. The report states that many structural elements are under-utilized, but it also identifies highly utilized columns and S206 columns as critical exceptions. Therefore, checking the remaining capacity of the existing columns is important to verify whether the proposed vertical extension is structurally feasible and to identify where strengthening, replacement, or redesign may be required.[cite: 24].
 
 ## A2c: Use Case
-## A2c: Use Case
+
+### 1. How to check the claim?
 
 ### 1. How would we check the claim?
 
@@ -29,13 +30,15 @@ The process consists of:
 
 1. Load the existing IFC model.
 2. Extract the geometry and available material properties of the existing structural columns from the IFC model, primarily from `IfcColumn`.
-3. Obtain the existing structural/material information required for the capacity calculation.
-4. Define the additional loads produced by the proposed vertical extension.
-5. Calculate the axial load-bearing capacity of the relevant existing columns.
-6. Calculate the resulting column utilization under the existing and additional loads.
-7. Compare the calculated utilization with the allowable capacity.
-8. Identify columns that have sufficient capacity and flag columns that require further structural assessment, strengthening, replacement, or redesign.
-9. Generate a structural assessment report.
+3. Obtain any additional structural information required for the capacity calculation, such as reinforcement data, existing design loads, and material properties from the original structural documentation where this information is not available in the IFC model.
+4. Determine the existing loads acting on the relevant columns.
+5. Define the additional permanent and variable loads produced by the proposed vertical extension.
+6. Apply the relevant load combinations and partial safety factors according to the applicable structural design standards.
+7. Calculate the axial load-bearing capacity of the relevant existing columns.
+8. Calculate the resulting column utilization under the combined existing and additional loads.
+9. Compare the calculated utilization with the allowable capacity.
+10. Identify columns that have sufficient capacity and flag columns that require further structural assessment, strengthening, replacement, or redesign.
+11. Generate a structural assessment report showing the utilization and status of the checked columns.
 
 ### 2. When would this claim need to be checked?
 
