@@ -20,11 +20,11 @@
 
 ## Learning objectives
 After this tutorial you will be able to:
-1. Open an IFC file with IfcOpenShell and Read IFC units and identify columns.
+1. Open an IFC model using IfcOpenShell, identify its schema and units, and retrieve structural column elements (IfcColumn).
 2. Extract each IfcColumn element's GlobalId, structural mark, storey, material associations, cross-sectional dimensions, and length using IfcOpenShell.
-3. Match extracted data to a structural report and an external load CSV.
-4. Calculate/visualize *illustrative characteristic load differences*
-5. Explain why a real `N_Ed/N_Rd` check needs verified design actions and resistances, and other structural checks.
+3. Compare extracted IFC column information with structural documentation and integrate external loading data using Python and pandas.
+4. Calculate and visualize illustrative changes in column loading between existing and proposed conditions.
+5. Perform an illustrative axial-capacity calculation, calculate a demand-to-capacity ratio, and explain the additional requirements for a verified structural utilization assessment.
 
 ## What you need
 * Python 3.10 or newer and Jupyter Notebook.
@@ -48,8 +48,8 @@ data/26-08-STR.ifc                          (you add this file)
 5. Give the feedback at the end of the notebook.
 
 ## Notes
-* `loads_example.csv` contains made-up numbers and no real loads.
+* `loads_example.csv` contains invented loading values for educational purposes and does not represent verified structural loads.
 * The report table was typed by hand from the structural report. Check it against the original.
-* Steps after this tutorial (load combinations, axial resistance, utilization) are not covered.
+* The results do not represent verified structural utilization. Actual design assessments require validated loading, material properties, appropriate design combinations, and relevant structural resistance checks.
 
 ## Peer Review and Feedback
