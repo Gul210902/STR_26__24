@@ -3,7 +3,7 @@
 ## Summary
 **Title:** Extracting Column Data from IFC for Capacity Checks
 
-**Description:** This beginner tutorial shows how as structural analysts we load an IFC model with IfcOpenShell, extract column dimensions, materials and storeys, and combine them with external load data in a pandas table for later capacity checks.
+**Description:** This is a beginner tutorial on opening an IFC model, reading `IfcColumn` properties, joining external load data and understanding the difference between a load increase and a structural utilization ratio.
 
 ## Tutorial information
 | | |
@@ -11,11 +11,11 @@
 | Course | 41934 Advanced BIM, DTU (A3: Teach) |
 | Group | 24: Gulshan Kumar (s252589), Aida Amirbabaei (s216201) |
 | Focus area | Structural Analysis |
-| Role / level targeted | Analyst, Level 1 (beginner) *(confirm level on the course roles page)* |
+| Role / level targeted | Analyst, Level 1 (beginner) |
 | BIM use | 08: Structural Analysis |
-| Learning need | Learn how to extract column geometry and material properties from an IFC model using IfcOpenShell and combine them with external load data for structural analysis. |
-| Time needed | About 45–60 minutes |
-| Formats | Jupyter Notebook + this Markdown README |
+| Learning need | Learn how to extract column geometry and material properties from an IFC model using IfcOpenShell, integrate external structural loading data, and perform preliminary column capacity assessments, including the calculation and interpretation of an illustrative utilization ratio. |
+| Time needed | About 60–90 minutes |
+| Formats | Markdown + Jupyter Notebook + optional solution notebook. |
 | License | MIT |
 
 ## Learning objectives
