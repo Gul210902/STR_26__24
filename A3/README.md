@@ -41,7 +41,7 @@ data/26-08-STR.ifc                          (you add this file)
 
 ## How to run
 1. Download this folder and add `26-08-STR.ifc` to `data/`.
-2. Open `tutorial.ipynb` in Jupyter or VS Code.
+2. Open `tutorial.ipynb` in Jupyter or VS Code (with the Python and Jupyter extensions installed).
 3. Run the cells from top to bottom. Do the three "Your turn" exercises.
 4. Give feedback with the questions at the end of the notebook.
 
