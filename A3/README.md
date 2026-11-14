@@ -13,7 +13,7 @@
 | Focus area | Structural Analysis |
 | Role / level targeted | Analyst, Level 1 (beginner) *(confirm level on the course roles page)* |
 | BIM use | 08: Structural Analysis |
-| Learning need | Read column data from an IFC model and combine it with external load data (from our A2f information requirements) |
+| Learning need | Learn how to extract column geometry and material properties from an IFC model using IfcOpenShell and combine them with external load data for structural analysis. |
 | Time needed | About 45–60 minutes |
 | Formats | Jupyter Notebook + this Markdown README |
 | License | MIT |
