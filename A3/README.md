@@ -3,7 +3,7 @@
 ## Summary
 **Title:** Extracting Column Data from IFC for Capacity Checks
 
-**Description:** This beginner tutorial shows structural analysts how to load an IFC model with IfcOpenShell, extract column dimensions, materials and storeys, and combine them with external load data in a pandas table for later capacity checks.
+**Description:** This beginner tutorial shows how as structural analysts we load an IFC model with IfcOpenShell, extract column dimensions, materials and storeys, and combine them with external load data in a pandas table for later capacity checks.
 
 ## Tutorial information
 | | |
