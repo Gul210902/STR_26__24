@@ -19,11 +19,12 @@
 | License | MIT |
 
 ## Learning objectives
-After this tutorial you can:
-1. Open an IFC file with IfcOpenShell and read its schema, units and number of columns.
-2. Extract for every `IfcColumn` its GlobalId, mark, storey, material, cross-section and length.
-3. Handle columns whose geometry is not a simple rectangle.
-4. Combine the IFC data with an external load table and detect columns with missing load data.
+After this tutorial you will be able to:
+1. Open an IFC file with IfcOpenShell and Read IFC units and identify columns.
+2. Extract each IfcColumn element's GlobalId, structural mark, storey, material associations, cross-sectional dimensions, and length using IfcOpenShell.
+3. Match extracted data to a structural report and an external load CSV.
+4. Calculate/visualize **illustrative characteristic load differences**
+5. Explain why a real `N_Ed/N_Rd` check needs verified design actions and resistances, and other structural checks.
 
 ## What you need
 * Python 3.10 or newer and Jupyter
