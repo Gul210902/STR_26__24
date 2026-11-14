@@ -23,13 +23,13 @@ After this tutorial you will be able to:
 1. Open an IFC file with IfcOpenShell and Read IFC units and identify columns.
 2. Extract each IfcColumn element's GlobalId, structural mark, storey, material associations, cross-sectional dimensions, and length using IfcOpenShell.
 3. Match extracted data to a structural report and an external load CSV.
-4. Calculate/visualize **illustrative characteristic load differences**
+4. Calculate/visualize *illustrative characteristic load differences*
 5. Explain why a real `N_Ed/N_Rd` check needs verified design actions and resistances, and other structural checks.
 
 ## What you need
-* Python 3.10 or newer and Jupyter
-* `pip install ifcopenshell pandas`
-* The course structural model `26-08-STR.ifc`. Put it in the `data/` folder.
+* Python 3.10 or newer and Jupyter Notebook.
+* Required Python libraries: `pip install ifcopenshell pandas matplotlib`
+* Save `tutorial_A3_extended.ipynb` in your working folder and place `26-08-STR.ifc` and both CSV files in a `data` subfolder within the same folder.
 
 ## Files
 ```
