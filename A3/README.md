@@ -29,7 +29,7 @@ After this tutorial you will be able to:
 ## What you need
 * Python 3.10 or newer and Jupyter Notebook.
 * Required Python libraries: `pip install ifcopenshell pandas matplotlib`
-* Save `tutorial_A3_extended.ipynb` in your working folder and place `26-08-STR.ifc` and both CSV files in a `data` subfolder within the same folder.
+* Save `tutorial_A3_extended.ipynb` in your working folder and place `26-08-STR.ifc` and both CSV files in a `data` subfolder within the same working folder.
 
 ## Files
 ```
@@ -40,18 +40,16 @@ data/loads_example.csv                      INVENTED example loads, for practisi
 data/26-08-STR.ifc                          (you add this file)
 ```
 
-## How to run
-1. Download this folder and add `26-08-STR.ifc` to `data/`.
-2. Open `tutorial.ipynb` in Jupyter or VS Code (with the Python and Jupyter extensions installed).
-3. Run the cells from top to bottom. Do the three "Your turn" exercises.
-4. Give feedback with the questions at the end of the notebook.
-
-## The three steps
-1. **Load the IFC model**: open the file, check schema and units.
-2. **Extract column geometry and material**: storey, material, profile dimensions, quantities, and a check against the report.
-3. **Import existing and additional loads**: read a CSV and join it to the IFC data using the column mark.
+## Set up and run
+1. Install: `py -m pip install notebook ipykernel ifcopenshell pandas matplotlib`.
+2. Download the folder and place `26-08-STR.ifc` in `data/` alongside the provided CSV files.
+3. Open `tutorial.ipynb` in Jupyter or VS Code (with Python and Jupyter extensions).
+4. Restart the kernel, run the cells in order, and complete the exercises.
+5. Give the feedback at the end of the notebook.
 
 ## Notes
 * `loads_example.csv` contains made-up numbers and no real loads.
 * The report table was typed by hand from the structural report. Check it against the original.
 * Steps after this tutorial (load combinations, axial resistance, utilization) are not covered.
+
+## Peer Review and Feedback
