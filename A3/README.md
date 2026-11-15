@@ -33,11 +33,15 @@ After this tutorial you will be able to:
 
 ## Files
 ```
-README.md                                   this file
-tutorial.ipynb                              the tutorial (start here)
-data/report_table6_existing_columns.csv     existing column sizes typed from the structural report, Table 6
-data/loads_example.csv                      INVENTED example loads, for practising only
-data/26-08-STR.ifc                          (you add this file)
+The A3 folder contains the Jupyter Notebook and the following input files:
+
+tutorial_A3.ipynb                Main tutorial notebook.
+26-08-STR.ifc                    Proposed structural IFC model (to be added).
+report_table6_columns_full.csv   Column dimensions and reinforcement data.
+report_load_cases.csv            Loading data from the structural report.
+assumptions_DEMO.csv             Assumed parameters for demonstration calculations.
+
+The notebook also generates floor-loading data and saves the results in the results/ folder.
 ```
 
 ## Set up and run
