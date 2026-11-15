@@ -1,0 +1,28 @@
+﻿Mark,Length_m,Existing_b_mm,Existing_h_mm,Existing_Rebars,Proposed_b_mm,Proposed_h_mm,Proposed_Rebars,Jacketing_Type,Source_Notes,Strengthening_Status,Source
+S101,3.67,200,380,4ø16,200,380,4ø16,None,,Unchanged,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S102,3.67,200,200,4ø25,300,300,6ø25,4,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S103,3.67,200,530,6ø12,250,530,8ø12,1,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S104,3.67,200,300,4ø20,300,350,8ø20,3,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S105,3.67,200,1090,8ø20,300,1090,12ø20,2,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S106,3.67,250,250,4ø12,300,300,8ø12,2,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S107,3.1,200,300,4ø25,200,300,4ø25,None,,Unchanged,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S108,3.1,200,300,4ø16,300,400,6ø16,2,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S109,3.1,200,300,4ø16,200,300,4ø16,None,,Unchanged,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S110,3.67,200,300,4ø16,450,300,6ø16,2,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S111,3.67,200,300,4ø12,350,300,6ø12,2,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S113,3.67,200,840,6ø12,200,840,6ø12,None,,Unchanged,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S114,3.67,200,525,6ø12,200,525,6ø12,None,,Unchanged,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S116,3.67,200,360,4ø25,200,410,6ø25,1,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S201,4.04,200,380,6ø10,200,380,6ø10,None,,Unchanged,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S202,4.04,200,200,4ø10,300,300,8ø10,4,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S203,4.04,200,380,6ø10,200,380,6ø10,None,,Unchanged,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S204,4.04,200,300,4ø10,300,300,6ø10,2,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S205,4.04,200,1090,8ø10,200,1090,8ø10,None,,Unchanged,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S207,4.04,200,300,4ø12,300,400,8ø12,4,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S208,4.04,200,300,4ø10,300,400,8ø10,4,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S210,4.04,200,300,4ø10,300,400,8ø10,4,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S211,4.04,200,300,4ø12,300,400,8ø11,4,Report states 8ø11; unusual diameter: verify before design,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S212,4.04,240,200,4ø16,240,350,8ø16,1,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S213,4.04,240,200,4ø16,240,350,8ø16,1,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S215,4.04,200,380,6ø10,300,380,9ø10,2,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20
+S216,4.04,200,200,4ø12,300,300,8ø12,4,,RC jacketing proposed,Team 08 Part D STR report Section 5.5 Table 6 PDF p20

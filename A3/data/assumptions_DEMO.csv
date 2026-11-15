@@ -1,0 +1,19 @@
+Parameter,Value,Basis
+fck_existing_MPa,15.06,Report §5.1 historical conversion; needs verification for columns
+fck_jacket_MPa,30,DEMONSTRATION ASSUMPTION — NOT VERIFIED FOR BUILDING 308
+fyk_existing_MPa,400,DEMONSTRATION ASSUMPTION — NOT VERIFIED FOR BUILDING 308
+fyk_jacket_MPa,500,DEMONSTRATION ASSUMPTION — NOT VERIFIED FOR BUILDING 308
+glulam_strength_class,GL30h,Report section 5.2/5.6
+glulam_fc0k_MPa,24,DEMONSTRATION ASSUMPTION — NOT VERIFIED FOR BUILDING 308
+gamma_c,1.5,ILLUSTRATIVE; verify applicable Danish NA
+alpha_cc,0.85,ILLUSTRATIVE; verify applicable Danish NA
+gamma_s,1.15,ILLUSTRATIVE; verify applicable Danish NA
+gamma_M_timber,1.25,"ILLUSTRATIVE; confirm Danish NA, combination, class"
+kmod_timber,0.8,ILLUSTRATIVE; depends on load duration and service class
+concrete_density_kN_m3,25,ILLUSTRATIVE; check as-built material
+timber_density_kN_m3,4.5,ILLUSTRATIVE; check material
+gamma_G,1.35,ILLUSTRATIVE ULS only; NOT claimed report Table 11
+gamma_Q,1.5,ILLUSTRATIVE ULS only; NOT claimed report Table 11
+gamma_S,1.5,ILLUSTRATIVE ULS only; NOT claimed report Table 11
+psi0_snow,0.5,ILLUSTRATIVE combination factor; verify
+transfer_max_horizontal_m,10000,DEMONSTRATION ASSUMPTION — NOT VERIFIED FOR BUILDING 308

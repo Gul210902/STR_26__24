@@ -1,0 +1,7 @@
+﻿Load_case,Description,Characteristic_value,Unit,Source,Limitation
+new_floor_nonstructural,New floor CLT/concrete non-structural build-up,0.39,kN/m2,3.1 Table 2 PDF p9,excludes structural member self-weight
+roof_terrace_nonstructural,New rooftop terrace non-structural build-up,0.8,kN/m2,3.1 Table 2 PDF p9,excludes structural member self-weight
+green_roof_nonstructural,Green roof assembly,1.48,kN/m2,3.1 Table 2 PDF p9,excludes structural member self-weight
+snow_region_blue,Characteristic snow roof blue regions,1.0,kN/m2,3.3 Figure 9 PDF p10,only designated roof regions
+snow_region_red,Characteristic snow roof red regions,3.0,kN/m2,3.3 Figure 9 PDF p10,only designated roof regions
+west_wind_peak_velocity_pressure,Peak velocity pressure west wind,0.6,kN/m2,3.4 PDF p10,NOT a directly applied column force; needs pressure coefficients and structural load path
