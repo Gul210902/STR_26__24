@@ -46,8 +46,8 @@ The notebook also generates floor-loading data and saves the results in the resu
 1. Install: `py -m pip install notebook ipykernel ifcopenshell numpy pandas matplotlib`.
 2. Download the folder and place `26-08-STR.ifc` in `data/` alongside the provided CSV files.
 3. Open `tutorial_A3.ipynb` in Jupyter or VS Code (with Python and Jupyter extensions).
-4. Restart the kernel, run the cells in order, and complete the exercises.
-5. Give the feedback at the end of the notebook.
+4. Restart the kernel and run all cells in order.
+5. Provide feedback using the peer-review instructions below.
 
 ## Notes
 * The report_load_cases.csv file contains loading information extracted from the structural report, while assumptions_DEMO.csv contains assumed parameters used in the simplified calculations. Additional synthetic floor-loading regions are generated within the notebook. The resulting utilization ratios are illustrative and do not represent verified structural design results.
