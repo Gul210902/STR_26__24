@@ -52,6 +52,5 @@ The notebook also generates floor-loading data and saves the results in the resu
 ## Notes
 * The report_load_cases.csv file contains loading information extracted from the structural report, while assumptions_DEMO.csv contains assumed parameters used in the simplified calculations. Additional synthetic floor-loading regions are generated within the notebook. The resulting utilization ratios are illustrative and do not represent verified structural design results.
 * The report table was typed by hand from the structural report. Check it against the original.
-* The results do not represent verified structural utilization. Actual design assessments require validated loading, material properties, appropriate design combinations, and relevant structural resistance checks.
 
 ## Peer Review and Feedback
