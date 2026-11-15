@@ -28,7 +28,7 @@ After this tutorial you will be able to:
 
 ## What you need
 * Python 3.10 or newer and Jupyter Notebook.
-* Required Python libraries: `pip install ifcopenshell pandas matplotlib`
+* Required Python libraries: `py -m pip install notebook ipykernel ifcopenshell numpy pandas matplotlib`
 * Save `tutorial_A3.ipynb` in your working folder and place `26-08-STR.ifc` and all three CSV files in a `data` subfolder within the same working folder.
 
 ## Files
