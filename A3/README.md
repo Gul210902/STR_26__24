@@ -43,7 +43,7 @@ assumptions_DEMO.csv             Assumed parameters for demonstration calculatio
 The notebook also generates floor-loading data and saves the results in the results/ folder.
 
 ## Set up and run
-1. Install: `py -m pip install notebook ipykernel ifcopenshell pandas matplotlib`.
+1. Install: `py -m pip install notebook ipykernel ifcopenshell numpy pandas matplotlib`.
 2. Download the folder and place `26-08-STR.ifc` in `data/` alongside the provided CSV files.
 3. Open `tutorial_A3.ipynb` in Jupyter or VS Code (with Python and Jupyter extensions).
 4. Restart the kernel, run the cells in order, and complete the exercises.
